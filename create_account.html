@@ -79,6 +79,13 @@
     <button id="mainbutton" class="btn btn-lg btn-primary btn-block" type="button" onclick="registerButton()">Register</button>
 
     <script>
+        const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
+        const CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+        const AWS = require('aws-sdk');
+        const request = require('request');
+        const jwkToPem = require('jwk-to-pem');
+        const jwt = require('jsonwebtoken');
+        global.fetch = require('node-fetch');
 
         var username;
         var password;
@@ -146,6 +153,7 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="scripts/amazon-cognito-auth.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="scripts/amazon-cognito-identity.min.js"></script>
     <script src="scripts/amazon-cognito-identity.min.js"></script>
     <script src="scripts/config.js"></script>
 </body>
